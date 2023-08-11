@@ -14,6 +14,7 @@ dayjs.extend(timezone)
 
 /**
  * Do the aggregation process
+ * @notExported
  * 
  * @param currentTime start time of yearly aggregation
  * @returns true if process successfully done
@@ -40,6 +41,7 @@ export async function yearlyProcess(currentTime: dayjs.Dayjs): Promise<boolean> 
 
 /**
  * Aggregation process by powermeters
+ * @notExported
  * 
  * @param currentTime time of aggregation process
  * @param rows records of powermeter configurations
@@ -64,6 +66,8 @@ async function processAggregation(currentTime: dayjs.Dayjs, rows: any[]) {
 
 /**
  * Last year aggregation
+ * @notExported
+ * 
  * @param IPAddess IP address of powermeter
  * @param timeZone Timezone of powermeter
  * @param aggregatedDb Created yearly aggregation database
@@ -97,6 +101,8 @@ async function archiveLastYear(dbFilesPath: string, archiveRelativeFilePath: str
 
 /**
  * Archive and remove last year of datas
+ * @notExported
+ * 
  * @param IPAddess IP address of powermeter
  * @param momentLastYear last year of aggregation for search SQLite files
  */
@@ -122,6 +128,8 @@ async function cleanUpAggregatedFiles(IPAddess: string, momentLastYear: dayjs.Da
 }
 
 /**
+ * Compress database files
+ * @notExported
  * 
  * @param year year part of monthly SQLite file
  * @param dbFilesPath the SQLite files path that will be compressed

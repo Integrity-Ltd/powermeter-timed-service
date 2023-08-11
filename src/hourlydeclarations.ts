@@ -31,6 +31,8 @@ export async function hourlyProcess(currentTime: dayjs.Dayjs): Promise<boolean> 
 
 /**
  * Get active channels of powermeter
+ * @notExported
+ * 
  * @param configDB the SQLite config file of powermeters
  * @param powerMeterId the ID of powermeter
  * @returns 
