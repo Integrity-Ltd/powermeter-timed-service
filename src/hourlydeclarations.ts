@@ -12,7 +12,7 @@ import { runQuery, getMeasurementsFromPowerMeter } from "../../powermeter-utils/
 export async function hourlyProcess(currentTime: dayjs.Dayjs): Promise<boolean> {
     let result = true;
     try {
-        let configDB = new Database(process.env.CONFIG_DB_FILE_NAME as string, sqlite3.OPEN_READONLY);
+        let configDB = new Database(process.env.CONFIG_DB_FILE as string, sqlite3.OPEN_READONLY);
         let rows = await runQuery(configDB, 'SELECT * FROM power_meter where enabled=1', []);
         for (const powermeter of rows) {
             try {

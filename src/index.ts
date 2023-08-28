@@ -8,8 +8,8 @@ import { yearlyProcess } from './yearlydeclarations';
 
 dotenv.config({ path: path.resolve(__dirname, `../${process.env.NODE_ENV ? process.env.NODE_ENV as string : ""}.env`) });
 
-if (!fs.existsSync(process.env.CONFIG_DB_FILE_NAME as string)) {
-    fs.copyFileSync(path.resolve(__dirname, "../config.sqlite"), process.env.CONFIG_DB_FILE_NAME as string);
+if (!fs.existsSync(process.env.CONFIG_DB_FILE as string)) {
+    fs.copyFileSync(path.resolve(__dirname, "../config.sqlite"), process.env.CONFIG_DB_FILE as string);
 }
 
 cron.schedule(process.env.YEARLY_CRONTAB as string, () => {
